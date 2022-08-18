@@ -270,13 +270,13 @@ const fetchAgeGuess = async () => {
 //       callback(JSON.parse(request.responseText));
 //     }
 //   };
-//   request.open('GET', 'https://api.agify.io/?name=Pablo');
+//   request.open('GET', 'https://api.agify.io/?name=Jaqueline');
 //   request.send();
 // };
 // getAgeGuess(displayContent);
 
 // // Promesas
-// const fetchPromise = fetch('https://api.agify.io/?name=Pablo');
+// const fetchPromise = fetch('https://api.agify.io/?name=Jaqueline');
 
 // console.log(fetchPromise);
 
