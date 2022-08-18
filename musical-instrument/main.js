@@ -1,176 +1,100 @@
-console.log("hola mundo");
-const myName= "Jaqueline";
-let myAge= 18;
+console.log('Hola mundo!');
+const myName = 'Jaqueline';
+let myAge = 18;
 let x = 3;
-const y = 4;
-const likesMusic= true;
- console.log("My name is", myName);
- console.log("My age is", myAge);
- console.log("x is", x);
- console.log("y is", y);
- console.log("Does Daniela likes music?", likesMusic);
+let y = 4;
+const likesMusic = true;
+console.log('myName', myName);
+console.log('myAge', myAge);
+console.log('x', x);
+console.log('y', y);
+console.log('likesMusic', likesMusic);
 
- let favoriteColor= "green";
- console.log("my favorite color", favoriteColor);
- console.log("my age",typeof myAge);
- console.log("myName", typeof myName);
+// myName='Juan';
 
- //ejepmlo de ticket de compra
- const sabritas = 10;
- const refresco = 15;
- const cupon = 5;
- let totalProductos;
+console.log('myName', typeof myName);
+console.log('myAge', typeof myAge);
+console.log('x', typeof x);
+console.log('y', typeof y);
+console.log('likesMusic', typeof likesMusic);
 
+let z = y * x;
+console.log(z);
 
- totalProductos = sabritas + refresco;
- console.log ("*****************************************");
- console.log ("****************BIENVENIDO***************");
- console.log ("*                                       *");
- console.log ("*                                       *");
- console.log ("* Sabritas...............................", sabritas);
- console.log ("* Refresco...............................", refresco); 
- 
- console.log ("El total de es:..........", "$"+totalProductos);
- console.log ("* Descuento..............", "-"+cupon);
- console.log ("* total real:.................","$"+(totalProductos-cupon));
+z = y / x;
+console.log(z);
 
- console.log ("type:", typeof totalProductos);
+z = y + x;
+console.log(z);
 
- let z;
-    //operador de suma
- z=x+y;
- console.log("la suma  de "+x+" y "+y+" es "+z);
- 
- //operador de resta
- z=x-y;
- console.log("la resta  de "+x+" menos "+y+" es "+z);
- 
- //operador de division
- z=x/y;
- console.log("la división  de "+x+" entre "+y+" es "+z);
+z = y - x;
+console.log(z);
 
- //operador de multiplicación
- z=x*y;
- console.log("la multiplicación  de "+x+" por "+y+" es "+z);
+console.log(x == y);
+console.log(x != y);
+console.log(x === y);
+console.log(x !== y);
+console.log(x > y);
+console.log(x >= y);
+console.log(x < y);
+console.log(x <= y);
 
- let num = "22";
-    x++;
-console.log("operador de incremento",x);
-    x--;
-console.log("operador de decremento",x);
-console.log("operador de negacion unaria",-x);
-console.log("operador de suma unaria",+num);
-
-//operadores de comparacion
-console.log("operador de igualdad", x == y);
-console.log("operador de igualdad estricta", x === y);
-console.log("operador de desigualdad", x != y);
-console.log("operador de desigualdad estricta", x !== y);
-console.log("operador mayor que", x > y);
-console.log("operador mayor o igual que", x >= y);
-console.log("operador menor que", x < y);
-console.log("operador menor o igual que que", x <= y);
-
-//uso de condicionales 
-if (likesMusic === true){
-    console.log("me gusta la musica");
+if (likesMusic == true) {
+  console.log('Me gusta la música');
 } else {
-    console.log("no me gusta la musica");
+  console.log('No me gusta la música');
 }
-
-//operador OR
-const lovesArt=false;
-if (lovesArt == true || likesMusic == true){
-    console.log("deberias dedicarte al arte");
-} else {
-    console.log("deberias dedicarte a otra cosa");
-}
-
-//if.. else if..
 let compraRealizada = false;
 let pisoBarrido = true;
-
-if(compraRealizada === true) {
-    let dinero = 10;
-}
-else if (pisoBarrido === true){
-    let dinero = 10;
-}
-else{
-    let dinero = 5;
-}
-
-//if.. else if.. mejorado
 let dinero;
-//se declaró afuera porque debido al scope no se puede poner adentro
-if(compraRealizada === true || pisoBarrido === true) {
-    //uso de operador de OR ()
-    dinero = 20;
-}
-else{
-     dinero = 0;
+if (compraRealizada == true || pisoBarrido == true) {
+  dinero = 10;
+} else {
+  dinero = 5;
 }
 
-console.log("el dinero del hermanito es:", dinero);
+console.log('El dinero de tu hermanito es:', dinero);
 
-
-//MISMO EJEMPLO PERO CON OPERADOR and
+let compraRealizada2 = false;
+let pisoBarrido2 = true;
 let dinero2;
-let compraRealizada2= true;
-let pisoBarrido2 = false;
-//se declaró afuera porque debido al scope no se puede poner adentro
-if(compraRealizada2 === true && pisoBarrido2 === true) {
-    //uso de operador de AND 
-    dinero2 = 20;
-}
-else{
-     dinero2 = 0;
+if (compraRealizada2 == true || pisoBarrido2 == true) {
+  dinero2 = 20;
+} else {
+  dinero2 = 0;
 }
 
-console.log("el dinero del hermanito es:", dinero2);
+console.log('El dinero de tu hermanito es:', dinero2);
 
-//ciclos
-for (let i = 0; i < 9; i++)
-{
-    console.log(i);
-}
-
-//ciclo de año de nacimiento a acutalidad y edad
-let nac = 2004;
+let YOB = 2004;
 const d = new Date();
-let act = d.getFullYear();
 
-for (let year = nac; year<= act; year++)
-{ 
-    if (year == nac){
-    console.log("en "+year+"  yo naci");
-     } 
-    else if (year-nac==1){
-    console.log("en  "+year+"  yo tenia "+(year-nac)+ " año ");
-        } 
-    else if(year == act){
-    console.log("en  "+year+"  yo tenia "+(year-nac)+ " años ");
-        }
-    else {
-    console.log("en  " +year+ "  yo tenia " +(year- nac) + " años ");
-        }
+let CY = d.getFullYear();
+
+for (let year = YOB; year <= CY; year++) {
+  if (year == YOB) {
+    console.log('En ' + year + ' yo nací');
+  } else if (year - YOB == 1) {
+    console.log('En ' + year + ' yo tenía ' + (year - YOB) + ' año');
+  } else if (year == CY) {
+    console.log('En el ' + year + ' yo tendré ' + (year - YOB) + ' años');
+  } else {
+    console.log('En ' + year + ' yo tenía ' + (year - YOB) + ' años');
+  }
 }
 
-//ciclo de planas
-for (let num2 = 0; num2<= 35; num2++)
-{
-    console.log("no debo pegarle  mis compañeros");
+for (let num = 0; num <= 35; num++) {
+  console.log('No debo de comerme el lonche de mis compañeros');
 }
 
-//uso de while para remplazo de for
-let year = nac;
-while (year <= act) {
-  let age = year - nac;
-  if (year == nac) {
+let year = YOB;
+while (year <= CY) {
+  let age = year - YOB;
+  if (year == YOB) {
     console.log('En ' + year + ' yo nací');
   } else if (age == 1) {
     console.log('En ' + year + ' yo tenía ' + age + ' año');
-  } else if (year == act) {
+  } else if (year == CY) {
     console.log('En el ' + year + ' yo tendré ' + age + ' años');
   } else {
     console.log('En ' + year + ' yo tenía ' + age + ' años');
@@ -178,165 +102,90 @@ while (year <= act) {
   year++;
 }
 
-/*function aCelsius(fahrenheit) {
-   return (fahrenheit-32) / 1.8;    
-}*/
-
-const aCelsius = (fahrenheit) => ((fahrenheit-32)/1.8);
+const aCelsius = (fahrenheit) => (5 / 9) * (fahrenheit - 32);
 console.log(aCelsius(100));
 
-function playNote(key){
-    // Obtenemos la nota
-    const noteAudio = document.getElementById(key.dataset.note);
-    // Reseteamos la ejecución de la nota
-    noteAudio.currentTime = 0;
-     // Utilizamos el método play de la nota
-     noteAudio.play();
-    // Añadimos la clase active
-    key.classList.add("active");
-    // Agregamos un event listener al evento ended
-    noteAudio.addEventListener("ended", () => {
-        // Cuando termine de reproducirse el sonido, removemos la clase active
-        key.classList.remove("active");
-    });
-  }
-
-  const WHITE_KEYS = ["z", "x", "c", "v", "b", "n", "m"];
-  const BLACK_KEYS = ["s", "d", "g", "h", "j"];
+const WHITE_KEYS = ['z', 'x', 'c', 'v', 'b', 'n', 'm'];
+const BLACK_KEYS = ['s', 'd', 'g', 'h', 'j'];
 
 const keys = document.querySelectorAll('.key');
-
-keys.forEach((key) => {
-    key.addEventListener("click",() => playNote(key));
-});  
-
 const whiteKeys = document.querySelectorAll('.key.white');
 const blackKeys = document.querySelectorAll('.key.black');
-
-const nameElement = document.querySelector('#name');
-const ageElement = document.querySelector('#age');
-const likesMusicElement = document.querySelector('#likesMusic');
-
-console.log(nameElement);
-nameElement.textContent=myName;
-ageElement.textContent=myAge;
-
-if (likesMusic == true){
-    likesMusicElement.textContent="Me gusta la música";
-} else {
-    likesMusicElement.textContent="No me gusta la música";
+function playNote(key) {
+  const noteAudio = document.getElementById(key.dataset.note);
+  noteAudio.play();
+  key.classList.add('active');
+  noteAudio.addEventListener('ended', () => {
+    key.classList.remove('active');
+  });
 }
+document.addEventListener('keydown', (e) => {
+  if (e.repeat) return;
+  const key = e.key;
+  const whiteKeyIndex = WHITE_KEYS.indexOf(key);
+  const blackKeyIndex = BLACK_KEYS.indexOf(key);
+  console.log(whiteKeys[whiteKeyIndex]);
+  if (whiteKeyIndex > -1) playNote(whiteKeys[whiteKeyIndex]);
+  if (blackKeyIndex > -1) playNote(blackKeys[blackKeyIndex]);
+});
 
-const body = document.querySelector("body");
-const text = document.querySelector("p");
-text.textContent = "Hola mundo desde el DOM";
 
-body.appendChild(text);
-body.removeChild(text);
-
-document.addEventListener("keydown", (e)=>{
-    console.log("hola");
-    if (e.repeat) return;
-    const key = e.key;
-    console.log("key",key);
-    const whiteKeyIndex = WHITE_KEYS.indexOf(key);
-    const blackKeyIndex = BLACK_KEYS.indexOf(key);
-
-    if (whiteKeyIndex > -1) 
-        playNote(whiteKeys[whiteKeyIndex]);
-    if (blackKeyIndex > -1) 
-        playNote(blackKeys[blackKeyIndex]);
-  
-} );
-
-const personaDS = {
-    nombre:{
-        primerNombre: "Jaqueline",
-        apellidoPaterno: "Hernandez",
-        apellidoMaterno: "Patricio",
-    }, 
-    edad: 18,
-    bio: function() {
-        console.log(this.nombre.primerNombre+' Tiene '+this.edad+' años');
+const kosako={
+    nombre: {
+            nombre: 'kosako',
+especie: 'conejo',
+        color: 'blanco con cafe',
     },
-    presentarseArrowFn: ()=>{console.log(this.nombre.primerNombre)},
-    presentarse: function(){
-        console.log('Hola! mi nombre es '+this.nombre.primerNombre);
-    }
+    bio:function(){
+    console.log (this.nombre+'es un'+this.especie+'el es de color:'+this.color);
+},
+      presentarseArrownFn: ()=>{console.log (this.nombre.especie)},
+          presentarse: function(){
+              console.log ('mi mascota es un'+this.especie+'de nombre '+this.nombre);
+          }
 };
 
-const frutas = ["Manzana", "Pera", "Fresa", "Uvas", "Guayaba"];
-    frutas[5]= "Piña";
-    frutas[0]= "Higo",
-    frutas.push("Frambuesa");
-    frutas.shift();
-    console.log(frutas);
+const frutas= ['melon', 'sandia', 'mango', 'fresa', 'cereza'];
+console.log (frutas [5]);
+frutas.push('frambuesa');
+console.log('Mis frutas agregando frambuesa: ',frutas);
+frutas.push ('piña');
+frutas[0]='Higo';
+console.log('Mis frutas cambiando melon por Higo: ',frutas)
+frutas.shift ();
+frutas.shift(); 
+console.log('Mis frutas removiendo el primer elemento: ',frutas)
 
-const calificaciones = [10,10,6,7,10,5,4];
+const calificaciones= [10,6,7,9,9,8];
+const reprobado = calificaciones.find( calificacion => calificacion < 6);
 
-const reprobados=calificaciones.find((calificacion)=> calificacion <= 5);
-const valorInicial = 0;
-const sumadeCalificaciones = calificaciones.reduce(
-    (valorPrevio, valorActual) => valorPrevio + valorActual,
-    valorInicial);
+let valorInicial=0;
+const sumaCalificaciones = calificaciones.reduce( (valorPrevio, valorActual) => valorPrevio + valorActual, valorInicial) 
+keys.forEach((key) => {
+  key.addEventListener('click', () => playNote(key));
+});
 
-const promedio2 = sumadeCalificaciones / calificaciones.length;
-const arribade8 = calificaciones.map((calificacion)=> calificacion >= 8);
-const aprobados = calificaciones.filter((calificacion)=> calificacion >= 6);
-console.log("reprobados", reprobados);
-console.log("promedio2",promedio2);
-console.log("arriba de 8 ", arribade8);
-console.log("aprobados", aprobados);
-
-/*const getAge = async () =>  {
-    const response = await fetch("https://api.agify.io?name=daniela");
+const getAge = async () => {
+    const response = await fetch('https://api.agify.io/?name=jaqueline');
     console.log(response);
 
     const data = await response.json();
-    console.log(data);
+    console.log(data)
 }
 
-/*const getAge = () => {
-    fetch('https://api.agify.io?name=noe').then((response) => response.json()).then((data) => console.log(data))
-}*/
-
-/*const printJuan = () => {
-   let age = 10;
-   let years = 5;
-   console.log("juan" + (age + years)); 
+const printJuan = () => {
+    let age = 2;
+    let years = 1/2;
+    console.log('Kui' + (age + years));
 }
 
 const main = async () => {
- await getAge();
+    await getAge();
 
     printJuan();
-    console.log("pepe");
+    console.log('Marley')
 }
-
-main();*/
-
-const getGuessedAge = async () => {
-    const response = await fetch('https://api.agify.io?name=Jaqueline');
-    const data = await response.json();
-    return data.age;
-}
-
-const displayGuessedAge = async () => {
-    const guessedAgeSpan= document.getElementById("guessedAge");
-    const guessedAge = await getGuessedAge();
-    guessedAgeSpan.textContent = guessedAge;
-}
-
-displayGuessedAge();
-
-/*if (guessedAge > myAge) {
-    const edadcorrecta1 = guessedAge > myAge;
-    const edadcorrecta = edadcorrecta1();
-    const myAge1 = document.getElementById("isGuessRight");
-    myAge1.textContent = ("incorrecto");
-}
-
-myAge1();*/
+main();
 
 
 
