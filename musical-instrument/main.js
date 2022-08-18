@@ -44,6 +44,20 @@ if (likesMusic == true) {
 } else {
   console.log('No me gusta la música');
 }
+
+// let compraRealizada = false;
+// let pisoBarrido = true;
+// let dinero;
+// if(compraRealizada==true){
+//     dinero = 10;
+// }
+// else if(pisoBarrido==true){
+//     dinero = 10;
+// }
+// else{
+//     dinero = 5;
+// }
+
 let compraRealizada = false;
 let pisoBarrido = true;
 let dinero;
@@ -66,9 +80,10 @@ if (compraRealizada2 == true || pisoBarrido2 == true) {
 
 console.log('El dinero de tu hermanito es:', dinero2);
 
+// YOB = Year of Birth
 let YOB = 2004;
 const d = new Date();
-
+// CY = Current Year
 let CY = d.getFullYear();
 
 for (let year = YOB; year <= CY; year++) {
@@ -102,8 +117,30 @@ while (year <= CY) {
   year++;
 }
 
-const aCelsius = (fahrenheit) => (5 / 9) * (fahrenheit - 32);
+// function aCelsius(fahrenheit){
+//   return (fahrenheit-32)/ 1.8;
+// }
+
+const aCelsius = (fahrenheit) => (fahrenheit - 32) / 1.8;
+
 console.log(aCelsius(100));
+
+function playNote(key) {
+  // Obtener la nota
+  const noteAudio = document.getElementById(key.dataset.note);
+  // Resetear la ejecución de la nota
+  // noteAudio.currentTime = 0;
+  // Utilizar método play() de la nota
+  noteAudio.play();
+
+  // Añadimos clase active
+  key.classList.add('active');
+  // Agregamos un event listener al estado ended del evento keydown
+  noteAudio.addEventListener('ended', () => {
+    // Cuando termine de reproducirse el sonido, removemos clase active
+    key.classList.remove('active');
+  });
+}
 
 const WHITE_KEYS = ['z', 'x', 'c', 'v', 'b', 'n', 'm'];
 const BLACK_KEYS = ['s', 'd', 'g', 'h', 'j'];
@@ -111,14 +148,36 @@ const BLACK_KEYS = ['s', 'd', 'g', 'h', 'j'];
 const keys = document.querySelectorAll('.key');
 const whiteKeys = document.querySelectorAll('.key.white');
 const blackKeys = document.querySelectorAll('.key.black');
-function playNote(key) {
-  const noteAudio = document.getElementById(key.dataset.note);
-  noteAudio.play();
-  key.classList.add('active');
-  noteAudio.addEventListener('ended', () => {
-    key.classList.remove('active');
-  });
+
+keys.forEach((key) => {
+  key.addEventListener('click', () => playNote(key));
+});
+
+const nameElement = document.querySelector('#name');
+const ageElement = document.querySelector('#age');
+const likesMusicElement = document.querySelector('#likesMusic');
+
+console.log('nameElement', nameElement);
+console.log('ageElement', ageElement);
+console.log('likesMusicElement', likesMusicElement);
+
+nameElement.textContent = myName;
+ageElement.textContent = myAge;
+
+if (likesMusic == true) {
+  likesMusicElement.textContent = 'Me gusta la música';
+} else {
+  likesMusicElement.textContent = 'No me gusta la música';
 }
+
+const body = document.querySelector('body');
+const text = document.createElement('p');
+text.textContent = 'Hola mundo desde el DOM!';
+
+body.appendChild(text);
+
+body.removeChild(text);
+
 document.addEventListener('keydown', (e) => {
   if (e.repeat) return;
   const key = e.key;
@@ -129,64 +188,106 @@ document.addEventListener('keydown', (e) => {
   if (blackKeyIndex > -1) playNote(blackKeys[blackKeyIndex]);
 });
 
-
-const kosako={
-    nombre: {
-            nombre: 'kosako',
-especie: 'conejo',
-        color: 'blanco con cafe',
-    },
-    bio:function(){
-    console.log (this.nombre+'es un'+this.especie+'el es de color:'+this.color);
-},
-      presentarseArrownFn: ()=>{console.log (this.nombre.especie)},
-          presentarse: function(){
-              console.log ('mi mascota es un'+this.especie+'de nombre '+this.nombre);
-          }
+const personaJP = {
+  nombre: {
+    primerNombre: 'Jaqueline',
+    apellidoPaterno: 'Hernandez',
+    apellidoMaterno: 'Patricio',
+  },
+  edad: 18,
+  bio: function () {
+    console.log(this.nombre.primerNombre + ' Tiene ' + this.edad + ' años');
+  },
+  presentarseArrowFn: () => {
+    console.log(this.nombre.primerNombre);
+  },
+  presentarse: function () {
+    console.log('Hola! Mi nombre es ' + this.nombre.primerNombre);
+  },
 };
 
-const frutas= ['melon', 'sandia', 'mango', 'fresa', 'cereza'];
-console.log (frutas [5]);
-frutas.push('frambuesa');
-console.log('Mis frutas agregando frambuesa: ',frutas);
-frutas.push ('piña');
-frutas[0]='Higo';
-console.log('Mis frutas cambiando melon por Higo: ',frutas)
-frutas.shift ();
-frutas.shift(); 
-console.log('Mis frutas removiendo el primer elemento: ',frutas)
+const frutas = ['Manzana', 'Mango', 'Melon', 'Sandía', 'Durazno'];
+frutas[5] = 'Piña';
+frutas[0] = 'Higo';
+frutas.push('Frambuesa');
+frutas.shift();
+console.log(frutas);
 
-const calificaciones= [10,6,7,9,9,8];
-const reprobado = calificaciones.find( calificacion => calificacion < 6);
+const calificaciones = [10, 6, 5, 8, 8, 7, 5, 10, 9, 9];
+const reprobados = calificaciones.find((calificacion) => calificacion <= 5);
+const mayorA8 = calificaciones.map((califacion) => califacion >= 8);
+const aprobados = calificaciones.filter((califacion) => califacion > 5);
+const sumatoria = calificaciones.reduce(
+  (valorAnterior, valorActual) => valorAnterior + valorActual,
+  0
+);
 
-let valorInicial=0;
-const sumaCalificaciones = calificaciones.reduce( (valorPrevio, valorActual) => valorPrevio + valorActual, valorInicial) 
-keys.forEach((key) => {
-  key.addEventListener('click', () => playNote(key));
-});
+const promedio = sumatoria / calificaciones.length;
+console.log('reprobados', reprobados);
+console.log('aprobados', aprobados);
+console.log('Mayor a 8', mayorA8);
 
-const getAge = async () => {
-    const response = await fetch('https://api.agify.io/?name=jaqueline');
-    console.log(response);
+console.log('El promedio general de la escuela es de :' + promedio);
 
-    const data = await response.json();
-    console.log(data)
-}
-
-const printJuan = () => {
-    let age = 2;
-    let years = 1/2;
-    console.log('Kui' + (age + years));
-}
-
-const main = async () => {
-    await getAge();
-
-    printJuan();
-    console.log('Marley')
-}
-main();
+const guessedAgeElement = document.querySelector('#guessedAge');
+const isGuessRightElement = document.querySelector('#isGuessRight');
 
 
+
+
+
+
+
+
+
+const displayContent = (content) => {
+  guessedAgeElement.textContent = content.age;
+  if (content.age === myAge) {
+    isGuessRightElement.textContent = 'esto es correcto';
+  } else {
+    isGuessRightElement.textContent = 'esto es incorrecto';
+  }
+};
+
+const fetchAgeGuess = async () => {
+  const response = await fetch('https://api.agify.io/?name=Jaqueline');
+  const content = await response.json();
+  displayContent(content);
+};
+
+
+
+
+
+
+
+
+// Callbacks
+// const getAgeGuess = (callback) => {
+//   const request = new XMLHttpRequest();
+//   request.onreadystatechange = function () {
+//     if (request.readyState == 4 && request.status == 200) {
+//       callback(JSON.parse(request.responseText));
+//     }
+//   };
+//   request.open('GET', 'https://api.agify.io/?name=Pablo');
+//   request.send();
+// };
+// getAgeGuess(displayContent);
+
+// // Promesas
+// const fetchPromise = fetch('https://api.agify.io/?name=Pablo');
+
+// console.log(fetchPromise);
+
+// fetchPromise
+//   .then((response) => response.json())
+//   .then((res) => displayContent(res));
+
+// console.log('Comenzando petición…');
+
+
+
+fetchAgeGuess();
 
 
